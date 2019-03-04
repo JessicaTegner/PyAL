@@ -7,9 +7,10 @@ instead.
 
 Installation
 ============
-PyAL is easy to install and integrate within your own projects. Just
-follow Python's standard procedure of installing packages or look for a
-prebuilt package for your operating system or distribution.
+For right now, you can only install from the source tree.
+* git clone https://github.com/NicklasMCHD/PyAL.git
+* cd PyAl
+* python setup.py install
 
 Documentation
 =============
@@ -23,4 +24,4 @@ development release).
 License
 =======
 This library is given to the public domain. There are no licensing
-restrictions. Please see *doc/copying.rst* for further details.
+restrictions. Please see *doc/copying.rst* for further details, if you need it.
