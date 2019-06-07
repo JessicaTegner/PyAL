@@ -1,5 +1,5 @@
 """Utility classes for OpenAL-based audio access."""
-from collections import Iterable
+from collections.abc import Iterable
 import ctypes
 import os
 from . import al, alc
