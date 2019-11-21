@@ -2,6 +2,7 @@
 AUTHORS.txt
 COPYING.txt
 Makefile
+README.md
 make.bat
 setup.py
 doc\Makefile

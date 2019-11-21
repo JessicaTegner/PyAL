@@ -3,3 +3,6 @@ graft util
 graft examples
 include *.bat Makefile
 include *.txt
+include README.md
+recursive-include examples *.*
+recursive-include doc *.*
