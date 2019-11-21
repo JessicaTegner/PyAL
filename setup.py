@@ -19,7 +19,7 @@ if __name__ == "__main__":
     readme.close()
 
     setupdata = {
-        "name":  "PyAL",
+        "name":  "python-openal",
         "version": VERSION,
         "description": "Python OpenAL bindings",
         "long_description": long_desc,
