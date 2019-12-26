@@ -3,7 +3,7 @@ import os
 import sys
 from distutils.core import setup
 
-VERSION = "0.3.0"
+VERSION = "0.4.0"
 
 if __name__ == "__main__":
 
@@ -28,6 +28,7 @@ if __name__ == "__main__":
         "license": "Public Domain / zlib",
         "url": "http://bitbucket.org/marcusva/py-al",
         "packages": ["openal",
+                     "openal.loaders",
                      "openal.test",
                      "openal.test.util"
                      ],
