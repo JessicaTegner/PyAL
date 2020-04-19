@@ -29,6 +29,7 @@ doc\images\openalaudio.png
 doc\images\openallistener.dia
 examples\audioplayer.py
 examples\hey.wav
+examples\hey.ogg
 examples\player.py
 examples\3D_Audio\OpenAL32.dll
 examples\3D_Audio\OpenAL_3D.py
