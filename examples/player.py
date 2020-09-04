@@ -3,6 +3,7 @@ import os
 import sys
 import time
 import wave
+sys.path.append(os.path.join(os.path.dirname(__file__), "../"))
 from openal import al, alc
 
 def run():

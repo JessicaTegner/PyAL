@@ -58,6 +58,7 @@ class _DLL(object):
                 # Could not load it, silently ignore that issue and move
                 # to the next one.
                 warnings.warn(exc, ImportWarning)
+                raise
         if self._dll is None:
             raise RuntimeError("could not load any library for %s" % libinfo)
         if path is not None and sys.platform in ("win32", "cli") and \
@@ -78,10 +79,7 @@ class _DLL(object):
         return self._libfile
 
 
-dll = _DLL("OpenAL", {"win32": ["OpenAL", "OpenAL32"],
-                      "darwin": ["OpenAL"],
-                      "DEFAULT": ["openal", "OpenAL"]},
-           os.getenv("PYAL_DLL_PATH"))
+dll = _DLL("OpenAL", {"win32": ["OpenAL", "OpenAL32"], "darwin": ["OpenAL"], "DEFAULT": ["openal", "OpenAL"]}, getattr(os.getenv, "PYAL_DLL_PATH", os.getcwd()))
 
 
 def get_dll_file():

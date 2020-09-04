@@ -1,9 +1,11 @@
 #using Pyglet
-from pyglet.media.drivers.openal import lib_openal as al
-from pyglet.media.drivers.openal import lib_alc as alc
+#from pyglet.media.drivers.openal import lib_openal as al
+#from pyglet.media.drivers.openal import lib_alc as alc
 
 #using PyAL
-##from openal import al, alc
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), "../../"))
+from openal import al, alc
 
 #imports for sound loading and wait during example
 import wave

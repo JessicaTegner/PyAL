@@ -1,10 +1,12 @@
 #using Pyglet
-from pyglet.media.drivers.openal import lib_openal as al
-from pyglet.media.drivers.openal import lib_alc as alc
-from pyglet.media.drivers.openal import lib_efx as efx
+#from pyglet.media.drivers.openal import lib_openal as al
+#from pyglet.media.drivers.openal import lib_alc as alc
+#from pyglet.media.drivers.openal import lib_efx as efx
 
 #using PyAL
-##from openal import al, alc, efx
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), "../../"))
+from openal import al, alc, efx
 
 #imports for sound loading and wait during example
 import wave
