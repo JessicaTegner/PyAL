@@ -1,5 +1,6 @@
 import ctypes
 from . import dll
+from .log import logger
 
 __all__ = ["ALC_FALSE", "ALC_TRUE", "ALC_INVALID", "ALC_FREQUENCY",
            "ALC_REFRESH", "ALC_SYNC", "ALC_MONO_SOURCES", "ALC_STEREO_SOURCES",
@@ -152,7 +153,6 @@ try:
     alcResetDeviceSOFT = _bind("alcResetDeviceSOFT", [ctypes.POINTER(ALCdevice),
                                                       ctypes.POINTER(ALCint)])
 except AttributeError:
-    import logging
-    logging.warning('alcGetStringiSOFT and alcResetDeviceSOFT not supported on this platform')
+    logger.warning('openAL-soft functions could not be bound')
 else:
     __all__.extend(('alcGetStringiSOFT', 'alcResetDeviceSOFT'))
