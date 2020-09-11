@@ -26,7 +26,7 @@ if __name__ == "__main__":
         "author": "Marcus von Appen",
         "author_email": "marcus@sysfault.org",
         "license": "Public Domain / zlib",
-        "url": "http://bitbucket.org/marcusva/py-al",
+        "url": "https://github.com/NicklasTegner/PyAL",
         "packages": ["openal",
                      "openal.loaders",
                      "openal.test",
