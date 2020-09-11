@@ -1,5 +1,6 @@
 import ctypes
 from . import dll
+from .log import logger
 
 __all__ = ["ALC_FALSE", "ALC_TRUE", "ALC_INVALID", "ALC_FREQUENCY",
            "ALC_REFRESH", "ALC_SYNC", "ALC_MONO_SOURCES", "ALC_STEREO_SOURCES",
@@ -26,8 +27,7 @@ __all__ = ["ALC_FALSE", "ALC_TRUE", "ALC_INVALID", "ALC_FREQUENCY",
            "alcGetError", "alcIsExtensionPresent", "alcGetProcAddress",
            "alcGetEnumValue", "alcGetString", "alcGetIntegerv",
            "alcCaptureOpenDevice", "alcCaptureCloseDevice", "alcCaptureStart",
-           "alcCaptureStop", "alcCaptureSamples", "alcGetStringiSOFT",
-           "alcResetDeviceSOFT",
+           "alcCaptureStop", "alcCaptureSamples",
            ]
 
 _bind = dll.bind_function
@@ -146,8 +146,13 @@ alcCaptureSamples = _bind("alcCaptureSamples", [ctypes.POINTER(ALCdevice),
                                                 ctypes.POINTER(ALCvoid),
                                                 ALCsizei])
 
-alcGetStringiSOFT = _bind("alcGetStringiSOFT", [ctypes.POINTER(ALCdevice),
-                                                  ctypes.POINTER(ALCenum),
-                                                  ctypes.POINTER(ALCsizei)])
-alcResetDeviceSOFT = _bind("alcResetDeviceSOFT", [ctypes.POINTER(ALCdevice),
-                                                  ctypes.POINTER(ALCint)])
+try:
+    alcGetStringiSOFT = _bind("alcGetStringiSOFT", [ctypes.POINTER(ALCdevice),
+                                                      ctypes.POINTER(ALCenum),
+                                                      ctypes.POINTER(ALCsizei)])
+    alcResetDeviceSOFT = _bind("alcResetDeviceSOFT", [ctypes.POINTER(ALCdevice),
+                                                      ctypes.POINTER(ALCint)])
+except AttributeError:
+    logger.warning('openAL-soft functions could not be bound')
+else:
+    __all__.extend(('alcGetStringiSOFT', 'alcResetDeviceSOFT'))

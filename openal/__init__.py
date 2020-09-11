@@ -87,5 +87,15 @@ def get_dll_file():
     return dll.libfile
 
 
+def is_openal_soft():
+    """Returns True if openAL-soft features are available."""
+    from . import alc
+    expected = (
+        'alcResetDeviceSOFT',
+        'alcGetStringiSOFT',
+    )
+    return all(getattr(alc, key, None) is not None for key in expected)
+
+
 __version__ = "0.2.0"
 version_info = (0, 2, 0, "")
