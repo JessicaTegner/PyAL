@@ -3,7 +3,7 @@ import os
 import sys
 from distutils.core import setup
 
-VERSION = "0.4.0"
+VERSION = "0.4.1"
 
 if __name__ == "__main__":
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
         "author": "Marcus von Appen",
         "author_email": "marcus@sysfault.org",
         "license": "Public Domain / zlib",
-        "url": "https://github.com/NicklasTegner/PyAL",
+        "url": "https://github.com/JessicaTegner/PyAL",
         "packages": ["openal",
                      "openal.loaders",
                      "openal.test",

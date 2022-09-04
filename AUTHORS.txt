@@ -1,4 +1,4 @@
 Authors and contributors:
-NicklasMCHD
+JessicaTegner
 Manuel Cortes
 Marcus von Appen <marcus@sysfault.org>
